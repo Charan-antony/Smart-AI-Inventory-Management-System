@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Out Sales | Smart AI Inventory System</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="app-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="brand-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <span>Inv<span class="gradient-text">AI</span></span>
+                </a>
+                <button class="sidebar-toggle-btn" onclick="document.getElementById('app-sidebar').classList.remove('active')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="sidebar-nav">
+                <span class="nav-section-title">Main Admin</span>
+                <a href="dashboard.html" class="sidebar-link"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+                <a href="assistant.html" class="sidebar-link"><i class="fa-solid fa-brain"></i> AI Assistant <span class="sidebar-badge" style="background:var(--primary);">AI</span></a>
+
+                <span class="nav-section-title">Inventory Control</span>
+                <a href="products.html" class="sidebar-link"><i class="fa-solid fa-box-archive"></i> Products</a>
+                <a href="categories.html" class="sidebar-link"><i class="fa-solid fa-layer-group"></i> Categories</a>
+                <a href="suppliers.html" class="sidebar-link"><i class="fa-solid fa-truck-field"></i> Suppliers</a>
+
+                <span class="nav-section-title">Stock Logistics</span>
+                <a href="stockin.html" class="sidebar-link"><i class="fa-solid fa-arrow-down-to-square"></i> Stock In Log</a>
+                <a href="stockout.html" class="sidebar-link active"><i class="fa-solid fa-arrow-up-from-square"></i> Stock Out Log</a>
+                <a href="alerts.html" class="sidebar-link"><i class="fa-solid fa-bell"></i> Low Stock Alerts</a>
+
+                <span class="nav-section-title">Intelligence & Account</span>
+                <a href="reports.html" class="sidebar-link"><i class="fa-solid fa-chart-pie"></i> Reports & Exports</a>
+                <a href="profile.html" class="sidebar-link"><i class="fa-solid fa-user-gear"></i> User Profile</a>
+                <a href="contact.html" class="sidebar-link"><i class="fa-solid fa-headset"></i> Contact Support</a>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-mini-card">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Alex Mercer">
+                    <div class="user-mini-info">
+                        <h5>Alex Mercer</h5>
+                        <span>Senior Manager</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="sidebar-toggle-btn" onclick="document.getElementById('app-sidebar').classList.add('active')"><i class="fa-solid fa-bars"></i></button>
+                    <h3 style="font-size:1.1rem; color:var(--text-main);">Stock Out Sales & Dispatch</h3>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="datetime-badge"><i class="fa-solid fa-clock"></i><span id="live-datetime">Loading...</span></div>
+                    <button class="btn btn-icon theme-toggle-btn"><i class="fa-solid fa-sun"></i></button>
+                    <button class="btn btn-icon" onclick="openModal('notif-modal')"><i class="fa-solid fa-bell"></i></button>
+                </div>
+            </header>
+
+            <div class="page-container">
+                <div class="dashboard-grid-2">
+                    <!-- STOCK OUT ENTRY FORM -->
+                    <div class="glass-card" style="padding:2rem;">
+                        <h3 style="margin-bottom:1.5rem;"><i class="fa-solid fa-arrow-up" style="color:var(--accent-rose);"></i> Record Customer Sale Dispatch</h3>
+
+                        <form id="stockout-form">
+                            <div class="form-group">
+                                <label class="form-label" for="stockout-product-select">
+                                    Select Product *
+                                    <span id="stockout-available-help" style="font-size:0.78rem; font-weight:600;"></span>
+                                </label>
+                                <select id="stockout-product-select" class="form-control" required></select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="stockout-quantity">Outward Quantity *</label>
+                                <input type="number" id="stockout-quantity" class="form-control" placeholder="e.g. 5" required min="1">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="stockout-customer">Customer / Client Name *</label>
+                                <input type="text" id="stockout-customer" class="form-control" placeholder="e.g. Acme Technologies Inc" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="stockout-invoice">Sales Invoice Number</label>
+                                <input type="text" id="stockout-invoice" class="form-control" placeholder="INV-2026-880">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="stockout-date">Dispatch Date *</label>
+                                <input type="date" id="stockout-date" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="stockout-notes">Dispatch Notes</label>
+                                <textarea id="stockout-notes" class="form-control" rows="2" placeholder="Express courier track ref..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width:100%; margin-top:0.5rem; background:var(--gradient-fire);">
+                                <i class="fa-solid fa-truck-fast"></i> Dispatch Stock & Reduce Inventory
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- STOCK OUT HISTORY TABLE -->
+                    <div class="glass-card">
+                        <div class="card-header-clean">
+                            <h3><i class="fa-solid fa-clock-rotate-left" style="color:var(--accent-rose);"></i> Recent Outward Sales Logs</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Txn ID</th>
+                                        <th>Invoice No</th>
+                                        <th>Product</th>
+                                        <th>Dispatched</th>
+                                        <th>Total Revenue</th>
+                                        <th>Customer</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="stockout-table-body">
+                                    <!-- Populated by js/stock.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/stock.js"></script>
+</body>
+</html>

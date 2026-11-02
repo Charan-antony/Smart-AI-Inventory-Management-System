@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Smart AI Inventory Management System</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <!-- ==========================================================================
+             SIDEBAR NAVIGATION
+             ========================================================================== -->
+        <aside class="sidebar" id="app-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="brand-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <span>Inv<span class="gradient-text">AI</span></span>
+                </a>
+                <button class="sidebar-toggle-btn" onclick="document.getElementById('app-sidebar').classList.remove('active')">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-nav">
+                <span class="nav-section-title">Main Admin</span>
+                <a href="dashboard.html" class="sidebar-link active">
+                    <i class="fa-solid fa-gauge-high"></i> Dashboard
+                </a>
+                <a href="assistant.html" class="sidebar-link">
+                    <i class="fa-solid fa-brain"></i> AI Assistant
+                    <span class="sidebar-badge" style="background:var(--primary);">AI</span>
+                </a>
+
+                <span class="nav-section-title">Inventory Control</span>
+                <a href="products.html" class="sidebar-link">
+                    <i class="fa-solid fa-box-archive"></i> Products
+                </a>
+                <a href="categories.html" class="sidebar-link">
+                    <i class="fa-solid fa-layer-group"></i> Categories
+                </a>
+                <a href="suppliers.html" class="sidebar-link">
+                    <i class="fa-solid fa-truck-field"></i> Suppliers
+                </a>
+
+                <span class="nav-section-title">Stock Logistics</span>
+                <a href="stockin.html" class="sidebar-link">
+                    <i class="fa-solid fa-arrow-down-to-square"></i> Stock In Log
+                </a>
+                <a href="stockout.html" class="sidebar-link">
+                    <i class="fa-solid fa-arrow-up-from-square"></i> Stock Out Log
+                </a>
+                <a href="alerts.html" class="sidebar-link">
+                    <i class="fa-solid fa-bell"></i> Low Stock Alerts
+                    <span class="sidebar-badge" id="sidebar-alert-count">2</span>
+                </a>
+
+                <span class="nav-section-title">Intelligence & Account</span>
+                <a href="reports.html" class="sidebar-link">
+                    <i class="fa-solid fa-chart-pie"></i> Reports & Exports
+                </a>
+                <a href="profile.html" class="sidebar-link">
+                    <i class="fa-solid fa-user-gear"></i> User Profile
+                </a>
+                <a href="contact.html" class="sidebar-link">
+                    <i class="fa-solid fa-headset"></i> Contact Support
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-mini-card">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Alex Mercer">
+                    <div class="user-mini-info">
+                        <h5>Alex Mercer</h5>
+                        <span>Senior Manager</span>
+                    </div>
+                    <a href="login.html" style="margin-left:auto; color:var(--text-dim);" title="Logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ==========================================================================
+             MAIN CONTENT
+             ========================================================================== -->
+        <main class="main-content">
+            <!-- TOPBAR -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="sidebar-toggle-btn" onclick="document.getElementById('app-sidebar').classList.add('active')">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="topbar-search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" class="form-control" placeholder="Search products, suppliers, barcodes..." onkeypress="if(event.key==='Enter') window.location.href='products.html?search='+encodeURIComponent(this.value)">
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="datetime-badge">
+                        <i class="fa-solid fa-clock"></i>
+                        <span id="live-datetime">Loading...</span>
+                    </div>
+
+                    <button class="btn btn-icon theme-toggle-btn" title="Toggle Light/Dark Theme">
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
+
+                    <button class="btn btn-icon notif-btn" onclick="openModal('notif-modal')" title="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="notif-badge-dot"></span>
+                    </button>
+
+                    <a href="profile.html" class="user-mini-card" style="padding:0.3rem 0.6rem; text-decoration:none;">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="User">
+                        <span style="font-size:0.88rem; font-weight:600; color:var(--text-main);">Alex</span>
+                    </a>
+                </div>
+            </header>
+
+            <!-- PAGE BODY CONTAINER -->
+            <div class="page-container">
+                <div class="page-header">
+                    <div>
+                        <h1>Executive AI Dashboard</h1>
+                        <p>Real-time telemetry, automated stock metrics, and revenue analytics.</p>
+                    </div>
+                    <div style="display:flex; gap:0.8rem;">
+                        <a href="products.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Add Product</a>
+                        <a href="stockin.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-arrow-down"></i> Stock In</a>
+                        <a href="stockout.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-arrow-up"></i> Stock Out</a>
+                    </div>
+                </div>
+
+                <!-- STATS CARDS GRID -->
+                <div class="stats-cards-grid">
+                    <div class="stat-card glass-card">
+                        <div class="stat-info">
+                            <span>Total Products</span>
+                            <h2 id="dash-total-products">0</h2>
+                            <span class="stat-change up"><i class="fa-solid fa-arrow-trend-up"></i> Active Catalog</span>
+                        </div>
+                        <div class="stat-card-icon stat-icon-indigo"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    </div>
+
+                    <div class="stat-card glass-card">
+                        <div class="stat-info">
+                            <span>Categories</span>
+                            <h2 id="dash-total-categories">0</h2>
+                            <span class="stat-change up"><i class="fa-solid fa-check"></i> Classified</span>
+                        </div>
+                        <div class="stat-card-icon stat-icon-teal"><i class="fa-solid fa-layer-group"></i></div>
+                    </div>
+
+                    <div class="stat-card glass-card">
+                        <div class="stat-info">
+                            <span>Suppliers</span>
+                            <h2 id="dash-total-suppliers">0</h2>
+                            <span class="stat-change up"><i class="fa-solid fa-truck"></i> Verified Vendors</span>
+                        </div>
+                        <div class="stat-card-icon stat-icon-amber"><i class="fa-solid fa-handshake"></i></div>
+                    </div>
+
+                    <div class="stat-card glass-card">
+                        <div class="stat-info">
+                            <span>Low Stock Alerts</span>
+                            <h2 id="dash-low-stock" style="color:var(--accent-amber);">0</h2>
+                            <span class="stat-change down"><i class="fa-solid fa-triangle-exclamation"></i> Action Required</span>
+                        </div>
+                        <div class="stat-card-icon stat-icon-rose"><i class="fa-solid fa-bell"></i></div>
+                    </div>
+
+                    <div class="stat-card glass-card">
+                        <div class="stat-info">
+                            <span>Out of Stock</span>
+                            <h2 id="dash-out-of-stock" style="color:var(--accent-rose);">0</h2>
+                            <span class="stat-change down"><i class="fa-solid fa-circle-xmark"></i> Immediate Order</span>
+                        </div>
+                        <div class="stat-card-icon stat-icon-rose"><i class="fa-solid fa-store-slash"></i></div>
+                    </div>
+
+                    <div class="stat-card glass-card">
+                        <div class="stat-info">
+                            <span>Today's Sales</span>
+                            <h2 id="dash-todays-sales">$0.00</h2>
+                            <span class="stat-change up"><i class="fa-solid fa-dollar-sign"></i> Real-time Revenue</span>
+                        </div>
+                        <div class="stat-card-icon stat-icon-teal"><i class="fa-solid fa-cash-register"></i></div>
+                    </div>
+
+                    <div class="stat-card glass-card">
+                        <div class="stat-info">
+                            <span>Monthly Revenue</span>
+                            <h2 id="dash-monthly-revenue">$0.00</h2>
+                            <span class="stat-change up"><i class="fa-solid fa-arrow-trend-up"></i> Gross Velocity</span>
+                        </div>
+                        <div class="stat-card-icon stat-icon-indigo"><i class="fa-solid fa-chart-line"></i></div>
+                    </div>
+
+                    <div class="stat-card glass-card">
+                        <div class="stat-info">
+                            <span>AI Health Score</span>
+                            <h2 id="dash-health-score" style="color:var(--accent-teal);">100%</h2>
+                            <div style="width:100%; height:6px; background:var(--bg-glass); border-radius:10px; margin-top:0.4rem; overflow:hidden;">
+                                <div id="dash-health-bar" style="width:100%; height:100%; background:var(--gradient-accent);"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card-icon stat-icon-teal"><i class="fa-solid fa-shield-heart"></i></div>
+                    </div>
+                </div>
+
+                <!-- ANALYTICS CHARTS GRID -->
+                <div class="dashboard-grid-2">
+                    <div class="glass-card">
+                        <div class="card-header-clean">
+                            <h3><i class="fa-solid fa-chart-line" style="color:var(--primary);"></i> Revenue & Purchase Capital Trend</h3>
+                            <span style="font-size:0.8rem; color:var(--text-muted);">Monthly Breakdown</span>
+                        </div>
+                        <div style="padding:1.5rem; height:320px;">
+                            <canvas id="chart-sales-trend"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="glass-card">
+                        <div class="card-header-clean">
+                            <h3><i class="fa-solid fa-chart-pie" style="color:var(--accent-teal);"></i> Inventory Health Status</h3>
+                            <span style="font-size:0.8rem; color:var(--text-muted);">Current Ratio</span>
+                        </div>
+                        <div style="padding:1.5rem; height:320px;">
+                            <canvas id="chart-inventory-status"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RECENT TRANSACTIONS TABLE & CATEGORY BAR CHART -->
+                <div class="dashboard-grid-2">
+                    <div class="glass-card">
+                        <div class="card-header-clean">
+                            <h3><i class="fa-solid fa-clock-rotate-left" style="color:var(--accent-cyan);"></i> Recent Stock Transactions</h3>
+                            <a href="stockin.html" class="btn btn-secondary btn-sm">View All Logs</a>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Txn ID</th>
+                                        <th>Product Name</th>
+                                        <th>Type</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recent-transactions-body">
+                                    <!-- Populated by dashboard.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="glass-card">
+                        <div class="card-header-clean">
+                            <h3><i class="fa-solid fa-layer-group" style="color:var(--accent-purple);"></i> Category Stock Units</h3>
+                        </div>
+                        <div style="padding:1.5rem; height:280px;">
+                            <canvas id="chart-category-dist"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- NOTIFICATION CENTER MODAL -->
+    <div id="notif-modal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 class="modal-title"><i class="fa-solid fa-bell" style="color:var(--accent-amber);"></i> Notification Center</h3>
+                <button class="modal-close-btn" onclick="closeModal('notif-modal')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" id="notif-modal-body">
+                <div class="ai-feature-item" style="margin-bottom:0.8rem;">
+                    <div class="ai-item-icon" style="background:var(--accent-amber);"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div class="ai-item-text">
+                        <h4>Low Stock Warning</h4>
+                        <p>Quantum Core Smart Router Pro has reached critical level (8 units left).</p>
+                    </div>
+                </div>
+                <div class="ai-feature-item" style="margin-bottom:0.8rem;">
+                    <div class="ai-item-icon" style="background:var(--accent-rose);"><i class="fa-solid fa-store-slash"></i></div>
+                    <div class="ai-item-text">
+                        <h4>Out of Stock Alert</h4>
+                        <p>Ultra-Precision Servo Motor 500W is out of stock.</p>
+                    </div>
+                </div>
+                <div class="ai-feature-item">
+                    <div class="ai-item-icon" style="background:var(--accent-teal);"><i class="fa-solid fa-check"></i></div>
+                    <div class="ai-item-text">
+                        <h4>Stock Replenished</h4>
+                        <p>50 units of Smart IoT Node added by Alex Mercer.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="showToast('All notifications marked as read', 'info'); closeModal('notif-modal');">Mark All Read</button>
+                <button class="btn btn-primary" onclick="closeModal('notif-modal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

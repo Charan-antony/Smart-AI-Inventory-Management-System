@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart AI Inventory Management System | Track. Manage. Restock.</title>
+    <meta name="description" content="Next-generation commercial AI Inventory Management System with real-time stock control, automated restock alerts, expiry prediction, and analytics.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVBAR / HEADER
+         ========================================================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <span>Inv<span class="gradient-text">AI</span></span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#ai-highlights" class="nav-link">AI Assistant</a></li>
+                <li><a href="#demo" class="nav-link">Screenshots</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="btn btn-icon theme-toggle-btn" title="Toggle Theme">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="dashboard.html" class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-gauge-high"></i> Dashboard
+                </a>
+                <button class="mobile-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="badge-ai">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> AI-Powered Inventory Engine 2.0
+                    </div>
+                    <h1>Smart Inventory System <br><span class="gradient-text">Track. Manage. Restock.</span></h1>
+                    <p>Supercharge your business operations with autonomous AI forecasting, automated stock replenishments, real-time analytics, and glassmorphic dashboards designed for modern enterprises.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="dashboard.html" class="btn btn-primary">
+                            <i class="fa-solid fa-rocket"></i> Launch System
+                        </a>
+                        <a href="login.html" class="btn btn-secondary">
+                            <i class="fa-solid fa-lock"></i> Admin Portal
+                        </a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <div class="trust-avatars">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="User 1">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="User 2">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="User 3">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="User 4">
+                        </div>
+                        <div class="trust-text">
+                            <p><i class="fa-solid fa-star" style="color:#F59E0B;"></i> 4.9/5 Rating</p>
+                            <span>Trusted by 500+ commercial warehouses & retailers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Visual Card -->
+                <div class="hero-visual">
+                    <!-- Floating Badge 1 -->
+                    <div class="floating-badge floating-badge-1">
+                        <div class="floating-icon" style="background: rgba(16,185,129,0.2); color:#10B981;">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <p style="font-size:0.75rem; color:var(--text-muted);">Restock Efficiency</p>
+                            <h4 style="font-size:1.1rem; color:var(--accent-teal);">+45% Optimal</h4>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 2 -->
+                    <div class="floating-badge floating-badge-2">
+                        <div class="floating-icon" style="background: rgba(99,102,241,0.2); color:var(--primary);">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <p style="font-size:0.75rem; color:var(--text-muted);">AI Health Score</p>
+                            <h4 style="font-size:1.1rem; color:var(--text-main);">98.4% Healthy</h4>
+                        </div>
+                    </div>
+
+                    <div class="hero-preview-card glass-card">
+                        <div class="mock-window-bar">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                            <span class="mock-title"><i class="fa-solid fa-shield-cat"></i> InvAI Control Center</span>
+                        </div>
+                        <div class="mock-body">
+                            <div class="mock-stats-row">
+                                <div class="mock-stat">
+                                    <span>Total Stock</span>
+                                    <h4>1,420 Pcs</h4>
+                                </div>
+                                <div class="mock-stat">
+                                    <span>Inventory Value</span>
+                                    <h4>$148,920</h4>
+                                </div>
+                                <div class="mock-stat">
+                                    <span>Low Stock</span>
+                                    <h4 style="color:var(--accent-amber);">2 Items</h4>
+                                </div>
+                            </div>
+                            <div class="mock-chart-placeholder">
+                                <i class="fa-solid fa-brain fa-2x"></i>
+                                <span style="font-size:0.85rem; font-weight:600;">Neural Stock Demand Forecast Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT INVENTORY SYSTEM
+         ========================================================================== -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Why InvAI</span>
+                <h2 class="section-title">Built for Modern Inventory Operations</h2>
+                <p class="section-desc">Traditional inventory tracking leads to lost stock, overstocking costs, and human error. Our AI-first platform automates monitoring end-to-end.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3>Real-Time Tracking</h3>
+                    <p>Instant synchronization across stock in, stock out, sales channels, and supplier purchase orders with zero latency.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3>Predictive AI Restocking</h3>
+                    <p>Machine learning algorithms analyze sales velocity and lead times to calculate exact reorder points automatically.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <h3>Automated Alerts</h3>
+                    <p>Never run out of critical inventory. Receive instant popups and notifications before stock reaches zero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         STATISTICS COUNTER SECTION
+         ========================================================================== -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="counter-val gradient-text" data-target="10000" data-suffix="+">0</h3>
+                    <p>Products Managed</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter-val gradient-text" data-target="2400000" data-prefix="$" data-suffix="+">0</h3>
+                    <p>Inventory Capital</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter-val gradient-text" data-target="99" data-suffix=".8%">0</h3>
+                    <p>Accuracy Rate</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="counter-val gradient-text" data-target="45" data-suffix="%">0</h3>
+                    <p>Cost Reduction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CORE FEATURES GRID
+         ========================================================================== -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Modules & Capabilities</span>
+                <h2 class="section-title">Everything You Need to Scale</h2>
+                <p class="section-desc">A comprehensive suit of enterprise tools designed for seamless stock management and analytics.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-barcode"></i>
+                    </div>
+                    <h3>Barcode & SKU Support</h3>
+                    <p>Generate, scan, and search products instantly using unique barcode identifiers for rapid checkouts.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                    <h3>Stock In & Stock Out</h3>
+                    <p>Streamlined inward purchase logs and outward customer dispatch tracking with automated inventory updates.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3>Supplier Management</h3>
+                    <p>Maintain detailed supplier directories, purchase histories, contact records, and order fulfillments.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-calendar-xmark"></i>
+                    </div>
+                    <h3>Expiry Prediction</h3>
+                    <p>Proactively identify perishable compounds and products near expiration to reduce wastage and loss.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Advanced Reporting</h3>
+                    <p>Generate sales, movement, supplier, and low stock reports with instant CSV and printable views.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3>Chart Analytics</h3>
+                    <p>Visual revenue growth, inventory health, category distributions, and sales trends powered by Chart.js.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         AI FEATURE HIGHLIGHTS
+         ========================================================================== -->
+    <section id="ai-highlights" class="ai-highlights-section">
+        <div class="container">
+            <div class="ai-showcase-grid">
+                <div class="ai-feature-list">
+                    <div class="badge-ai">
+                        <i class="fa-solid fa-brain"></i> Intelligent Operations
+                    </div>
+                    <h2 class="section-title">AI Inventory Assistant & Health Score</h2>
+                    <p class="section-desc" style="margin-bottom:1.5rem;">Our embedded JS AI engine evaluates sales trends, stocking levels, and shelf life in real time to recommend reorder quantities.</p>
+
+                    <div class="ai-feature-item">
+                        <div class="ai-item-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="ai-item-text">
+                            <h4>Predict Low Stock Before Outages</h4>
+                            <p>Identifies high-velocity items and alerts staff days before critical depletion occurs.</p>
+                        </div>
+                    </div>
+
+                    <div class="ai-feature-item">
+                        <div class="ai-item-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+                        <div class="ai-item-text">
+                            <h4>Overstock & Slow-Moving Detection</h4>
+                            <p>Highlights tied-up capital in dormant items so you can launch promotional clearouts.</p>
+                        </div>
+                    </div>
+
+                    <div class="ai-feature-item">
+                        <div class="ai-item-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                        <div class="ai-item-text">
+                            <h4>Smart Inventory Health Percentage</h4>
+                            <p>Real-time index scoring your overall inventory turnover, accuracy, and safety margins.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-radar-card glass-card">
+                    <div class="ai-score-ring">
+                        <div class="ai-score-inner">
+                            <h2>94%</h2>
+                            <span>Health Score</span>
+                        </div>
+                    </div>
+                    <h3>Optimal Inventory State</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:0.5rem;">Only 2 items require attention out of 6 catalog categories.</p>
+                    <a href="assistant.html" class="btn btn-primary btn-sm" style="margin-top:1.5rem;">
+                        <i class="fa-solid fa-microchip"></i> Open AI Assistant
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         WHY CHOOSE US (COMPARISON GRID)
+         ========================================================================== -->
+    <section class="why-choose-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Comparison</span>
+                <h2 class="section-title">Manual Spreadsheets vs. Smart AI</h2>
+                <p class="section-desc">See why hundreds of businesses upgraded from traditional tracking to our AI system.</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comp-box traditional">
+                    <div class="comp-header">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        <h3>Traditional Excel / Manual System</h3>
+                    </div>
+                    <ul class="comp-list">
+                        <li><i class="fa-solid fa-xmark"></i> High human error rate in manual stock counts</li>
+                        <li><i class="fa-solid fa-xmark"></i> Frequent out-of-stock surprises during peak sales</li>
+                        <li><i class="fa-solid fa-xmark"></i> Capital locked in excess overstocked items</li>
+                        <li><i class="fa-solid fa-xmark"></i> No automated expiry or low stock warnings</li>
+                        <li><i class="fa-solid fa-xmark"></i> Time-consuming manual paper reporting</li>
+                    </ul>
+                </div>
+
+                <div class="comp-box ai-smart">
+                    <div class="comp-header">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <h3>Smart AI Inventory System</h3>
+                    </div>
+                    <ul class="comp-list">
+                        <li><i class="fa-solid fa-check"></i> Automated real-time balance calculations</li>
+                        <li><i class="fa-solid fa-check"></i> Predictive reorder alerts before stock runs out</li>
+                        <li><i class="fa-solid fa-check"></i> Capital optimization via fast/slow item profiling</li>
+                        <li><i class="fa-solid fa-check"></i> Instant popup & toast notifications</li>
+                        <li><i class="fa-solid fa-check"></i> One-click CSV export & PDF report generation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SCREENSHOTS & INTERACTIVE DEMO TABS
+         ========================================================================== -->
+    <section id="demo" class="screenshots-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">System Showcase</span>
+                <h2 class="section-title">Explore the Interface</h2>
+                <p class="section-desc">Clean, responsive glassmorphism modules built for desktop and mobile efficiency.</p>
+            </div>
+
+            <div class="screenshot-tabs">
+                <button class="tab-btn active" data-tab="dashboard">
+                    <i class="fa-solid fa-gauge-high"></i> Admin Dashboard
+                </button>
+                <button class="tab-btn" data-tab="products">
+                    <i class="fa-solid fa-box-archive"></i> Product Management
+                </button>
+                <button class="tab-btn" data-tab="ai">
+                    <i class="fa-solid fa-brain"></i> AI Assistant
+                </button>
+                <button class="tab-btn" data-tab="reports">
+                    <i class="fa-solid fa-chart-column"></i> Analytics Reports
+                </button>
+            </div>
+
+            <div class="screenshot-display">
+                <!-- Tab 1: Dashboard Mockup -->
+                <div id="tab-dashboard" class="tab-content-panel active">
+                    <div class="mock-window-frame">
+                        <div style="padding:2rem; background:var(--bg-secondary);">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                                <h3>Dashboard Overview</h3>
+                                <span class="status-pill status-in-stock"><i class="fa-solid fa-circle"></i> Live Sync Active</span>
+                            </div>
+                            <div class="stats-cards-grid" style="margin-bottom:1rem;">
+                                <div class="stat-card glass-card">
+                                    <div class="stat-info">
+                                        <span>Total Products</span>
+                                        <h2>1,420</h2>
+                                    </div>
+                                    <div class="stat-card-icon stat-icon-indigo"><i class="fa-solid fa-boxes-stacked"></i></div>
+                                </div>
+                                <div class="stat-card glass-card">
+                                    <div class="stat-info">
+                                        <span>Categories</span>
+                                        <h2>12</h2>
+                                    </div>
+                                    <div class="stat-card-icon stat-icon-teal"><i class="fa-solid fa-layer-group"></i></div>
+                                </div>
+                                <div class="stat-card glass-card">
+                                    <div class="stat-info">
+                                        <span>Low Stock Alerts</span>
+                                        <h2 style="color:var(--accent-amber);">2</h2>
+                                    </div>
+                                    <div class="stat-card-icon stat-icon-amber"><i class="fa-solid fa-bell"></i></div>
+                                </div>
+                                <div class="stat-card glass-card">
+                                    <div class="stat-info">
+                                        <span>Revenue Today</span>
+                                        <h2>$8,450</h2>
+                                    </div>
+                                    <div class="stat-card-icon stat-icon-rose"><i class="fa-solid fa-dollar-sign"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Products Mockup -->
+                <div id="tab-products" class="tab-content-panel">
+                    <div class="mock-window-frame">
+                        <div style="padding:2rem; background:var(--bg-secondary);">
+                            <h3 style="margin-bottom:1rem;">Product Table Preview</h3>
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>AI Edge Vision Sensor Module</td>
+                                        <td>Electronics</td>
+                                        <td>$189.99</td>
+                                        <td>45 Pcs</td>
+                                        <td><span class="status-pill status-in-stock">In Stock</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Quantum Core Smart Router Pro</td>
+                                        <td>Smart Home</td>
+                                        <td>$329.50</td>
+                                        <td>8 Pcs</td>
+                                        <td><span class="status-pill status-low-stock">Low Stock</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: AI Assistant Mockup -->
+                <div id="tab-ai" class="tab-content-panel">
+                    <div class="mock-window-frame">
+                        <div style="padding:2rem; background:var(--bg-secondary);">
+                            <h3 style="margin-bottom:1rem;"><i class="fa-solid fa-robot" style="color:var(--primary);"></i> AI Intelligence Summary</h3>
+                            <div class="ai-feature-item" style="margin-bottom:1rem;">
+                                <div class="ai-item-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                                <div class="ai-item-text">
+                                    <h4>Restock Recommendation</h4>
+                                    <p>Order 15 units of Quantum Core Router before July 30 to prevent revenue loss.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Reports Mockup -->
+                <div id="tab-reports" class="tab-content-panel">
+                    <div class="mock-window-frame">
+                        <div style="padding:2rem; background:var(--bg-secondary); text-align:center;">
+                            <h3 style="margin-bottom:1rem;">Exportable Stock Reports</h3>
+                            <div style="display:flex; justify-content:center; gap:1rem;">
+                                <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+                                <button class="btn btn-primary btn-sm"><i class="fa-solid fa-file-pdf"></i> Download PDF Report</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIALS
+         ========================================================================== -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Testimonials</span>
+                <h2 class="section-title">Trusted by Warehouse Managers</h2>
+                <p class="section-desc">Here is what leading operations directors say about our Smart Inventory System.</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card">
+                    <div>
+                        <div class="testimonial-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"InvAI eliminated stockouts for our electronics distribution business. The AI prediction tool saved us over $40,000 in excess holding costs."</p>
+                    </div>
+                    <div class="testimonial-user">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Sarah Jenkins">
+                        <div>
+                            <h5>Sarah Jenkins</h5>
+                            <span>VP Operations, TechDistro Corp</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-card">
+                    <div>
+                        <div class="testimonial-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The glassmorphic dashboard is stunning. Managing products, suppliers, and CSV exports takes seconds instead of hours of manual entry."</p>
+                    </div>
+                    <div class="testimonial-user">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="David Sterling">
+                        <div>
+                            <h5>David Sterling</h5>
+                            <span>Supply Chain Lead, Apex Hardware</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card glass-card">
+                    <div>
+                        <div class="testimonial-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The real-time alerts for low stock and expiry prediction give our team total peace of mind. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-user">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Elena Rostova">
+                        <div>
+                            <h5>Elena Rostova</h5>
+                            <span>Inventory Specialist, BioPharm Labs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <div class="badge-ai">
+                        <i class="fa-solid fa-envelope"></i> Get In Touch
+                    </div>
+                    <h2 class="section-title" style="margin:1rem 0;">Request Enterprise Support</h2>
+                    <p class="section-desc">Have questions about deploying our Smart AI Inventory System in your warehouse or store network? Send us a message.</p>
+
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <h5>Headquarters</h5>
+                                <p style="color:var(--text-muted); font-size:0.9rem;">742 Silicon Parkway, Innovation District, CA</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h5>Phone Support</h5>
+                                <p style="color:var(--text-muted); font-size:0.9rem;">+1 (800) 555-INVAI (24/7 Priority)</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                            <div>
+                                <h5>Email Support</h5>
+                                <p style="color:var(--text-muted); font-size:0.9rem;">support@inventoryai.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="padding:2.5rem;">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label class="form-label" for="contact-name">Full Name *</label>
+                            <input type="text" id="contact-name" class="form-control" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="contact-email">Email Address *</label>
+                            <input type="email" id="contact-email" class="form-control" placeholder="john@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="contact-message">Message *</label>
+                            <textarea id="contact-message" class="form-control" rows="4" placeholder="How can we help your inventory operations?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width:100%;">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <div class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                        <span>Inv<span class="gradient-text">AI</span></span>
+                    </a>
+                    <p>Commercial-grade Smart AI Inventory Management System designed for precision, velocity, and zero stockouts.</p>
+                    <div class="social-links">
+                        <a href="#" class="btn btn-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="btn btn-icon"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="btn btn-icon"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="dashboard.html">Admin Dashboard</a>
+                        <a href="products.html">Product Management</a>
+                        <a href="categories.html">Categories</a>
+                        <a href="suppliers.html">Suppliers</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Modules</h4>
+                    <div class="footer-links">
+                        <a href="stockin.html">Stock In Logs</a>
+                        <a href="stockout.html">Stock Out Logs</a>
+                        <a href="alerts.html">Low Stock Alerts</a>
+                        <a href="assistant.html">AI Assistant</a>
+                        <a href="reports.html">Reports & Export</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Account</h4>
+                    <div class="footer-links">
+                        <a href="login.html">Login</a>
+                        <a href="register.html">Register</a>
+                        <a href="profile.html">User Profile</a>
+                        <a href="contact.html">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Smart AI Inventory Management System. All rights reserved.</p>
+                <p>Designed with <i class="fa-solid fa-heart" style="color:var(--accent-rose);"></i> for Enterprise Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back To Top Button -->
+    <button class="back-to-top" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

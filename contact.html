@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Smart AI Inventory Management System</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <span>Inv<span class="gradient-text">AI</span></span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#features" class="nav-link">Features</a></li>
+                <li><a href="index.html#ai-highlights" class="nav-link">AI Assistant</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="btn btn-icon theme-toggle-btn" title="Toggle Theme"><i class="fa-solid fa-sun"></i></button>
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="dashboard.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTACT HERO SECTION -->
+    <section class="contact-section" style="padding-top: calc(var(--navbar-height) + 4rem);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Contact Support</span>
+                <h2 class="section-title">We are Here to Help Your Operations</h2>
+                <p class="section-desc">Get in touch with our AI inventory specialists for custom deployments, API integrations, or enterprise training.</p>
+            </div>
+
+            <div class="contact-grid" style="margin-bottom:4rem;">
+                <div class="glass-card" style="padding:2.5rem;">
+                    <h3 style="margin-bottom:1.5rem;"><i class="fa-solid fa-paper-plane" style="color:var(--primary);"></i> Send Us a Message</h3>
+
+                    <form id="contact-page-form">
+                        <div class="form-group">
+                            <label class="form-label" for="c-name">Your Full Name *</label>
+                            <input type="text" id="c-name" class="form-control" placeholder="Alex Mercer" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="c-email">Email Address *</label>
+                            <input type="email" id="c-email" class="form-control" placeholder="alex@company.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="c-subject">Subject</label>
+                            <input type="text" id="c-subject" class="form-control" placeholder="Enterprise Inquiry">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="c-message">Message *</label>
+                            <textarea id="c-message" class="form-control" rows="4" placeholder="How can we assist your business?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width:100%;">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+
+                <div>
+                    <div class="glass-card" style="padding:2.5rem; margin-bottom:2rem;">
+                        <h3 style="margin-bottom:1.5rem;">Corporate Headquarters</h3>
+                        
+                        <div class="contact-info-list" style="margin:0;">
+                            <div class="contact-info-item">
+                                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <h5>Silicon Valley HQ</h5>
+                                    <p style="color:var(--text-muted); font-size:0.9rem;">742 Innovation Blvd, Palo Alto, CA 94301</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <h5>24/7 Support Hotline</h5>
+                                    <p style="color:var(--text-muted); font-size:0.9rem;">+1 (800) 555-INVAI (46824)</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <h5>Email Desk</h5>
+                                    <p style="color:var(--text-muted); font-size:0.9rem;">support@inventoryai.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GOOGLE MAP PLACEHOLDER -->
+                    <div class="glass-card" style="padding:1.5rem; text-align:center;">
+                        <i class="fa-solid fa-map-location-dot fa-3x" style="color:var(--primary); margin-bottom:1rem;"></i>
+                        <h4>Global Distribution Center Map</h4>
+                        <p style="color:var(--text-muted); font-size:0.85rem; margin-top:0.3rem;">Palo Alto • Chicago • Austin • London • Tokyo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Smart AI Inventory Management System. All rights reserved.</p>
+                <p>Track. Manage. Restock.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.getElementById('contact-page-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            showToast('Thank you! Your message has been sent to our AI support team.', 'success', 'Inquiry Received');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>

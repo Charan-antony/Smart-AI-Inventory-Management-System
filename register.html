@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account | Smart AI Inventory System</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .auth-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            position: relative;
+            background: var(--bg-primary);
+            overflow: hidden;
+        }
+        .auth-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(99, 102, 241, 0.1) 50%, transparent 70%);
+            filter: blur(100px);
+            bottom: -10%;
+            right: 15%;
+            pointer-events: none;
+        }
+        .auth-card {
+            width: 100%;
+            max-width: 480px;
+            padding: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 1.8rem;
+        }
+        .auth-header .logo-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius-md);
+            background: var(--gradient-accent);
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem auto;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+        .auth-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+        .auth-header p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-wrapper">
+        <div class="auth-card glass-card">
+            <div class="auth-header">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <h2>Create AI Account</h2>
+                <p>Start tracking inventory with AI automation</p>
+            </div>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label class="form-label" for="reg-name">Full Name *</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="reg-name" class="form-control" placeholder="Alex Mercer" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="reg-email">Corporate Email Address *</label>
+                    <div class="input-icon-wrapper">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="reg-email" class="form-control" placeholder="alex@company.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="reg-password">Password *</label>
+                    <div class="input-icon-wrapper" style="position:relative;">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="reg-password" class="form-control" placeholder="Minimum 6 characters" required>
+                        <button type="button" class="password-toggle-btn" id="toggle-pwd-btn-1">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="reg-confirm">Confirm Password *</label>
+                    <div class="input-icon-wrapper" style="position:relative;">
+                        <i class="fa-solid fa-shield-check"></i>
+                        <input type="password" id="reg-confirm" class="form-control" placeholder="Repeat password" required>
+                        <button type="button" class="password-toggle-btn" id="toggle-pwd-btn-2">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div style="margin-bottom:1.5rem;">
+                    <label class="checkbox-group">
+                        <input type="checkbox" id="reg-terms" required>
+                        <span>I agree to the <a href="#" style="color:var(--primary);">Terms of Service</a> & <a href="#" style="color:var(--primary);">Privacy Policy</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;">
+                    <i class="fa-solid fa-user-check"></i> Create Enterprise Account
+                </button>
+            </form>
+
+            <div style="text-align:center; margin-top:1.5rem; font-size:0.9rem; color:var(--text-muted);">
+                Already have an account? <a href="login.html" style="color:var(--primary); font-weight:600;">Sign In</a>
+            </div>
+            <div style="text-align:center; margin-top:1.2rem;">
+                <a href="index.html" style="font-size:0.85rem; color:var(--text-dim);"><i class="fa-solid fa-arrow-left"></i> Back to Home Page</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Password toggles
+        function setupToggle(btnId, inputId) {
+            const btn = document.getElementById(btnId);
+            const input = document.getElementById(inputId);
+            if (btn && input) {
+                btn.addEventListener('click', () => {
+                    const type = input.type === 'password' ? 'text' : 'password';
+                    input.type = type;
+                    btn.querySelector('i').className = type === 'password' ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash';
+                });
+            }
+        }
+        setupToggle('toggle-pwd-btn-1', 'reg-password');
+        setupToggle('toggle-pwd-btn-2', 'reg-confirm');
+
+        // Form Submit
+        document.getElementById('register-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value.trim();
+            const email = document.getElementById('reg-email').value.trim();
+            const password = document.getElementById('reg-password').value;
+            const confirm = document.getElementById('reg-confirm').value;
+
+            if (password !== confirm) {
+                showToast('Passwords do not match. Please verify.', 'danger', 'Validation Error');
+                return;
+            }
+
+            if (password.length < 6) {
+                showToast('Password must be at least 6 characters long.', 'danger', 'Weak Password');
+                return;
+            }
+
+            // Save new user info into LocalStorage
+            const newUser = {
+                id: 'USR-' + Math.floor(1000 + Math.random() * 9000),
+                name: name,
+                email: email,
+                phone: '+1 (555) 000-0000',
+                role: 'Inventory Manager',
+                avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+                password: password
+            };
+            window.storage.saveUser(newUser);
+
+            showToast('Account created successfully! Logging you in...', 'success', 'Welcome!');
+            setTimeout(() => {
+                window.location.href = 'dashboard.html';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
